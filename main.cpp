@@ -11,23 +11,16 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
+    float (*functHandle)(float, float);
 
-
-        float (*functHandle)(float, float);
-
-         functHandle = xprime;
-         float t0 = 1.0f;
-         float x0 = -4.0f;
-         float tmax = 2;
-         float npts = 10;
-
-
-
-
-
+    functHandle = xprime;
+    float t0 = 1.0f;
+    float x0 = -4.0f;
+    float tmax = 2;
+    float npts = 10;
 
     MainWindow w(functHandle, t0, x0, tmax, npts);
     w.show();
     return a.exec();
 }
-float (*funcHandle)(float, float), float t0, float x0, float tmax, int npts
+

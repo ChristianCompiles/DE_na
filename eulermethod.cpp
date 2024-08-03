@@ -29,7 +29,3 @@ eulerMethod::~eulerMethod()
         delete[] x.ptr;
     }
 }
-float xprime(float x, float t)
-{
-    return 1 + (x * x) + (t * t * t);
-}
