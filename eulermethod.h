@@ -17,14 +17,15 @@ class eulerMethod
 private:
     float_1d_t t;
     float_1d_t x;
-    QLineSeries *series = new QLineSeries();
 
     void disp()
     {
-        for (size_t i = 0; i < t.n0; ++i)
-        {
-            series->append(x.ptr[i], t.ptr[i]);
-        }
+        QLineSeries *series = new QLineSeries();
+
+        // for (size_t i = 0; i < t.n0; ++i)
+        // {
+        //     series->append(x.ptr[i], t.ptr[i]);
+        // }
 
         QChart *chart = new QChart();
         chart->legend()->hide();
@@ -34,13 +35,11 @@ private:
 
         QChartView *chartView = new QChartView(chart);
         chartView->setRenderHint(QPainter::Antialiasing);
-
     }
 
 public:
     eulerMethod(float (*funcHandle)(float, float), float t0, float x0, float tmax, int npts);
     ~eulerMethod();
-
 };
 
 #endif // EULERMETHOD_H

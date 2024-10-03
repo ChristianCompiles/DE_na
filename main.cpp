@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     float tmax = 2;
     float npts = 10;
 
-    MainWindow w(functHandle, t0, x0, tmax, npts);
+    MainWindow w(nullptr, functHandle, t0, x0, tmax, npts);
     w.show();
     return a.exec();
 }
